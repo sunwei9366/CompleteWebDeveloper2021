@@ -1,0 +1,32 @@
+body {
+	background-image: url();
+	background-size: cover;
+}
+
+
+h2 {
+	color : red;
+	text-align : center;
+	border : 5px solid purple;
+	cursor : pointer ;
+}
+
+li {
+	list-style: none;
+	display : inline-block;
+}
+
+p {
+	/*text-decoration: line-through;*/
+	text-transform: uppercase;
+	font-family: 'ZCOOL XiaoWei', serif;
+}
+
+img {
+	float: right;
+}
+
+footer {
+	clear: both;
+	text-align: center;
+}
