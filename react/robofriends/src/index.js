@@ -6,10 +6,28 @@ import 'tachyons';
 import reportWebVitals from './reportWebVitals';
 import App from './containers/App';
 
+import {createLogger} from 'redux-logger';
+import {Provider, connect} from 'react-redux';
+
+import {createStore, applyMiddleware, combineReducers} from 'redux'
+
+import {searchRobots, requestRobots} from './reducers'
+
+import thunk from 'redux-thunk'
+
+const logger = createLogger(); // middle ware 
+
+const rootReducer = combineReducers({searchRobots, requestRobots})
+
+const store = createStore(rootReducer, applyMiddleware(thunk, logger));
+
+
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App></App>
-  </React.StrictMode>,
+  <Provider store={store}>
+    <App>
+    </App>
+  </Provider>,
   document.getElementById('root')
 );
 
